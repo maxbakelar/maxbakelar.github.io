@@ -1,99 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Engineering ePortfolio</title>
+  <meta name="theme-color" content="#090e1b">
+  <meta name="description" content="Max Bakelar's engineering ePortfolio: projects, technical skills, reflections, and experience.">
+  <title>Max Bakelar | Engineering ePortfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fb;
-      color: #17243a;
-      line-height: 1.6;
-    }
-    header {
-      background: #142b4e;
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-    }
-    nav {
-      background: #0e1e36;
-      text-align: center;
-      padding: 15px;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-    }
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 25px;
-    }
-    section {
-      background: white;
-      margin: 25px 0;
-      padding: 25px;
-      border-radius: 12px;
-    }
-    footer {
-      text-align: center;
-      padding: 25px;
-    }
+    :root { color-scheme: dark; --bg:#090e1b; --surface:#111b2d; --surface2:#17243a; --line:#2a3952; --text:#edf3ff; --muted:#a9b8d1; --accent:#69c5ff; --mint:#77e2c8; --max:1100px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
+    a { color:inherit; } a:focus-visible,button:focus-visible { outline:3px solid var(--mint); outline-offset:4px; }
+    .skip { position:absolute; top:-100px; left:15px; background:white; color:#111; padding:10px; z-index:100; }
+    .skip:focus { top:12px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin:auto; }
+    .topbar { position:sticky; top:0; z-index:10; backdrop-filter:blur(14px); background:rgba(9,14,27,.88); border-bottom:1px solid rgba(169,184,209,.15); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:73px; }
+    .brand { font-weight:800; letter-spacing:-.04em; font-size:1.18rem; text-decoration:none; white-space:nowrap; }
+    .brand span { color:var(--accent); }
+    .navlinks { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:6px 17px; }
+    .navlinks a { color:var(--muted); text-decoration:none; font-size:.87rem; font-weight:600; }
+    .navlinks a:hover { color:var(--text); }
+    .hero { position:relative; overflow:hidden; padding:105px 0 100px; border-bottom:1px solid var(--line); }
+    .hero:before { content:""; position:absolute; width:570px; height:570px; right:-160px; top:-160px; pointer-events:none; background:radial-gradient(circle,rgba(41,121,193,.22),transparent 65%); }
+    .eyebrow { color:var(--mint); text-transform:uppercase; font-size:.76rem; letter-spacing:.2em; font-weight:800; }
+    h1,h2,h3,p { margin-top:0; } h1 { font-size:clamp(3.1rem,7vw,6.1rem); line-height:1.03; letter-spacing:-.065em; max-width:900px; margin:22px 0; }
+    h1 .gradient { background:linear-gradient(100deg,var(--accent),var(--mint)); color:transparent; background-clip:text; -webkit-background-clip:text; }
+    .hero p { color:var(--muted); font-size:clamp(1.04rem,2vw,1.25rem); max-width:670px; }
+    .actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:30px; }
+    .btn { display:inline-flex; gap:8px; align-items:center; justify-content:center; text-decoration:none; font-weight:750; border-radius:10px; padding:12px 20px; border:1px solid var(--line); transition:transform .2s,background .2s; }
+    .btn:hover { transform:translateY(-2px); } .btn.primary { background:var(--accent); border-color:var(--accent); color:#081426; }
+    .btn.secondary { background:var(--surface); color:var(--text); }
+    section.content { padding:78px 0; border-bottom:1px solid var(--line); }
+    .section-heading { margin-bottom:24px; } .section-heading h2 { margin:7px 0 0; font-size:clamp(1.85rem,4vw,2.7rem); letter-spacing:-.045em; line-height:1.2; }
+    .intro { color:var(--muted); max-width:800px; font-size:1.07rem; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:19px; }
+    .card { padding:27px; background:linear-gradient(155deg,var(--surface),#0f1727); border:1px solid var(--line); border-radius:17px; }
+    .card h3 { font-size:1.2rem; line-height:1.3; margin:8px 0 10px; }
+    .card p { color:var(--muted); margin-bottom:0; }
+    .card .kicker { color:var(--mint); text-transform:uppercase; font-size:.74rem; letter-spacing:.1em; font-weight:800; }
+    .card a { color:var(--accent); text-underline-offset:4px; }
+    .chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .chip { background:var(--surface2); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:.9rem; color:#d9e8ff; }
+    .split { display:grid; grid-template-columns:1.3fr .7fr; gap:26px; align-items:start; }
+    .mini { padding:21px; border:1px solid var(--line); border-radius:15px; background:var(--surface); }
+    .mini strong { display:block; margin-bottom:8px; }
+    .mini p { color:var(--muted); margin:0; }
+    .note { font-size:.88rem; color:var(--muted); margin-top:15px; }
+    footer { padding:28px 0 35px; color:var(--muted); font-size:.85rem; }
+    footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    @media(max-width:760px) { .nav { align-items:flex-start; padding:17px 0; flex-direction:column; gap:12px; } .navlinks { justify-content:flex-start; gap:7px 15px; } .hero { padding:75px 0; } section.content { padding:57px 0; } .grid,.split { grid-template-columns:1fr; } .card { padding:22px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .btn { transition:none; } }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My ePortfolio</h1>
-    <p>Computer Engineering | AI | Cybersecurity</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#home">MAX<span>.</span>BAKELAR</a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+        <a href="#reflections">Reflections</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#reflection">Reflection</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main id="main">
+    <div id="home" class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Computer Engineering · Georgia Tech</div>
+        <h1>Hi, I'm Max.<br><span class="gradient">I build, learn, and explore.</span></h1>
+        <p>I'm a Computer Engineering student interested in artificial intelligence, cybersecurity, and creating useful technology. This portfolio documents the projects, skills, and lessons shaping my journey.</p>
+        <div class="actions"><a class="btn primary" href="#projects">Explore my projects →</a><a class="btn secondary" href="#contact">Get in touch</a></div>
+      </div>
+    </div>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am a Computer Engineering student at
-        Georgia Tech with interests in artificial
-        intelligence, cybersecurity, and technology.
-      </p>
+    <section class="content" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div>
+          <div class="section-heading"><div class="eyebrow">01 / Introduction</div><h2 id="about-title">About me</h2></div>
+          <p class="intro">I'm studying Computer Engineering at the Georgia Institute of Technology. I enjoy connecting hardware and software, breaking complicated problems into manageable steps, and understanding how technology works beneath the surface.</p>
+          <p class="intro">My current areas of interest include AI, cybersecurity, embedded systems, and hands-on prototyping. I use this space to share both finished work and the process of getting there.</p>
+        </div>
+        <aside class="mini"><strong>Currently exploring</strong><p>Embedded systems<br>Artificial intelligence<br>Cybersecurity<br>Digital design</p></aside>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <h3>ECE Discovery Project</h3>
-      <p>
-        This section showcases my engineering
-        design process, implementation, and results.
-      </p>
+    <section class="content" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">02 / Selected work</div><h2 id="projects-title">Projects</h2></div>
+        <p class="intro">A growing collection of experiments and coursework. Each project is an opportunity to design, test, troubleshoot, and improve.</p>
+        <div class="grid">
+          <article class="card"><div class="kicker">Course project · ECE</div><h3>Engineering Discovery Project</h3><p>An introductory hardware-and-software project exploring prototyping with a microcontroller and Python. I'll add a demonstration, circuit photos, code, and a description of design decisions here.</p><div class="chips"><span class="chip">Arduino</span><span class="chip">Python</span><span class="chip">Prototyping</span></div></article>
+          <article class="card"><div class="kicker">Coursework · Digital design</div><h3>Digital Logic &amp; Circuits</h3><p>A place to document designs and lessons from digital systems coursework, including logic simplification, circuit diagrams, and testing.</p><div class="chips"><span class="chip">Logic gates</span><span class="chip">Circuit design</span></div></article>
+          <article class="card"><div class="kicker">Coursework · Programming</div><h3>Java &amp; Object-Oriented Programming</h3><p>Examples and reflections on writing organized, reusable programs with classes, inheritance, interfaces, and data structures.</p><div class="chips"><span class="chip">Java</span><span class="chip">OOP</span></div></article>
+          <article class="card"><div class="kicker">Next up</div><h3>Future projects</h3><p>Reserved for another build. As I complete new work, I'll add the problem, approach, tools, results, and what I would change next time.</p><div class="chips"><span class="chip">Coming soon</span></div></article>
+        </div>
+      </div>
     </section>
 
-    <section id="reflection">
-      <h2>Learning & Reflection</h2>
-      <p>
-        My reflections on technical growth,
-        collaboration, and problem-solving.
-      </p>
+    <section class="content" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">03 / Toolkit</div><h2 id="skills-title">Skills &amp; interests</h2></div>
+        <div class="grid">
+          <div class="card"><h3>Programming</h3><p>Java, Python, foundational object-oriented programming, debugging, and problem-solving.</p></div>
+          <div class="card"><h3>Hardware &amp; engineering</h3><p>Arduino prototyping, basic circuits, digital logic, and connecting software to physical devices.</p></div>
+          <div class="card"><h3>Technical interests</h3><p>AI, cybersecurity, embedded systems, and the intersection of computing and engineering.</p></div>
+          <div class="card"><h3>How I work</h3><p>Iterative design, testing assumptions, documenting setbacks, and learning from feedback.</p></div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Add your professional email and GitHub here.</p>
+    <section class="content" id="reflections" aria-labelledby="reflections-title">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">04 / Learning in progress</div><h2 id="reflections-title">Reflections</h2></div>
+        <div class="grid">
+          <article class="card"><div class="kicker">Engineering process</div><h3>Learning through iteration</h3><p>When a prototype doesn't work the first time, debugging forces me to examine my assumptions, isolate problems, and test one change at a time. I want to keep developing that methodical approach.</p></article>
+          <article class="card"><div class="kicker">Academic growth</div><h3>Connecting theory to practice</h3><p>My goal is to use what I learn in class to build real things. Seeing a concept work in software or hardware helps turn an abstract idea into practical understanding.</p></article>
+        </div>
+        <p class="note">These are starter reflections. Replace them with specific examples from your assignments before submitting this as a course portfolio.</p>
+      </div>
+    </section>
+
+    <section class="content" id="resume" aria-labelledby="resume-title">
+      <div class="wrap split">
+        <div><div class="section-heading"><div class="eyebrow">05 / Experience</div><h2 id="resume-title">Résumé</h2></div><p class="intro">My résumé brings together education, technical skills, projects, and experience. A PDF download can be added here once the document is ready to share.</p><p class="note">To add a download: upload a file named <code>resume.pdf</code> to this repository, then replace the text below with <code>&lt;a class="btn primary" href="resume.pdf" download&gt;Download résumé ↓&lt;/a&gt;</code>.</p></div>
+        <aside class="mini"><strong>Résumé PDF</strong><p>Not uploaded yet. This section is ready for your document.</p></aside>
+      </div>
+    </section>
+
+    <section class="content" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">06 / Connect</div><h2 id="contact-title">Let's connect.</h2></div>
+        <p class="intro">Interested in a project, collaboration, or conversation about engineering? You can find my work on GitHub.</p>
+        <div class="actions"><a class="btn primary" href="https://github.com/maxbakelar" target="_blank" rel="noopener noreferrer">View my GitHub ↗</a></div>
+        <p class="note">Add a professional email or LinkedIn profile here if you'd like visitors to contact you directly.</p>
+      </div>
     </section>
   </main>
-
-  <footer>
-    <p>My Engineering ePortfolio</p>
-  </footer>
+  <footer><div class="wrap"><span>© <span id="year">2026</span> Max Bakelar</span><span>Designed and built with HTML &amp; CSS · Hosted on GitHub Pages</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
