@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090e1b">
-  <meta name="description" content="Max Bakelar's engineering ePortfolio: projects, technical skills, reflections, and experience.">
-  <title>Max Bakelar | Engineering ePortfolio</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#090e1b" name="theme-color"/>
+<meta content="Max Bakelar's engineering ePortfolio: projects, technical skills, reflections, and experience." name="description"/>
+<title>Max Bakelar | Engineering ePortfolio</title>
+<style>
     :root { color-scheme: dark; --bg:#090e1b; --surface:#111b2d; --surface2:#17243a; --line:#2a3952; --text:#edf3ff; --muted:#a9b8d1; --accent:#69c5ff; --mint:#77e2c8; --max:1100px; }
     * { box-sizing: border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:90px; }
@@ -52,99 +53,90 @@
     footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
     @media(max-width:760px) { .nav { align-items:flex-start; padding:17px 0; flex-direction:column; gap:12px; } .navlinks { justify-content:flex-start; gap:7px 15px; } .hero { padding:75px 0; } section.content { padding:57px 0; } .grid,.split { grid-template-columns:1fr; } .card { padding:22px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .btn { transition:none; } }
-  </style>
+  
+.visual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.visual{margin:0;padding:20px;border:1px solid var(--line);background:var(--surface);border-radius:15px}.visual svg{width:100%;height:auto;display:block}.visual figcaption{color:var(--muted);font-size:.9rem;margin-top:12px}.career-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.career-grid .card{padding:20px}.longform p{max-width:850px;color:var(--muted)}@media(max-width:760px){.visual-grid,.career-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="topbar">
-    <nav class="wrap nav" aria-label="Main navigation">
-      <a class="brand" href="#home">MAX<span>.</span>BAKELAR</a>
-      <div class="navlinks">
-        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
-        <a href="#reflections">Reflections</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+<nav aria-label="Main navigation" class="wrap nav">
+<a class="brand" href="#home">MAX<span>.</span>BAKELAR</a>
+<div class="navlinks">
+<a href="#about">About</a><a href="#goals">Career Goals</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+<a href="#reflections">Reflections</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
+<a href="#visuals">Visuals</a></div>
+</nav>
+</header>
+<main id="main">
+<div class="hero" id="home">
+<div class="wrap">
+<div class="eyebrow">Computer Engineering · Georgia Tech</div>
+<h1>Hi, I'm Max.<br/><span class="gradient">I build, learn, and explore.</span></h1>
+<p>I'm a Computer Engineering student interested in artificial intelligence, cybersecurity, and creating useful and ethical technology. This portfolio documents the projects, skills, and lessons shaping my journey.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore my projects →</a><a class="btn secondary" href="#contact">Get in touch</a></div>
+</div>
+</div>
+<section aria-labelledby="about-title" class="content" id="about">
+<div class="wrap split">
+<div>
+<div class="section-heading"><div class="eyebrow">01 / Introduction</div><h2 id="about-title">About me</h2></div>
 
-  <main id="main">
-    <div id="home" class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Computer Engineering · Georgia Tech</div>
-        <h1>Hi, I'm Max.<br><span class="gradient">I build, learn, and explore.</span></h1>
-        <p>I'm a Computer Engineering student interested in artificial intelligence, cybersecurity, and creating useful and ethical technology. This portfolio documents the projects, skills, and lessons shaping my journey.</p>
-        <div class="actions"><a class="btn primary" href="#projects">Explore my projects →</a><a class="btn secondary" href="#contact">Get in touch</a></div>
-      </div>
-    </div>
 
-    <section class="content" id="about" aria-labelledby="about-title">
-      <div class="wrap split">
-        <div>
-          <div class="section-heading"><div class="eyebrow">01 / Introduction</div><h2 id="about-title">About me</h2></div>
-          <p class="intro">I'm studying Computer Engineering at the Georgia Institute of Technology. I enjoy connecting hardware and software, breaking complicated problems into manageable steps, and understanding how technology works beneath the surface.</p>
-          <p class="intro">My current areas of interest include AI, cybersecurity, embedded systems, and hands-on prototyping. I use this space to share both finished work and the process of getting there.</p>
-        </div>
-        <aside class="mini"><strong>Currently exploring</strong><p>Embedded systems<br>Artificial intelligence<br>Cybersecurity<br>Digital design<br>Hardware programming</p></aside>
-      </div>
-    </section>
-
-    <section class="content" id="projects" aria-labelledby="projects-title">
-      <div class="wrap">
-        <div class="section-heading"><div class="eyebrow">02 / Selected work</div><h2 id="projects-title">Projects</h2></div>
-        <p class="intro">A growing collection of experiments and coursework. Each project is an opportunity to design, test, troubleshoot, and improve.</p>
-        <div class="grid">
-          <article class="card"><div class="kicker">Course project · ECE</div><h3>Engineering Discovery Project</h3><p>An introductory hardware-and-software project exploring prototyping with a microcontroller and Python.</p><div class="chips"><span class="chip">Arduino</span><span class="chip">Python</span><span class="chip">Prototyping</span></div>
-<a href="discovery-project.html"
-   class="btn secondary"
-   style="margin-top: 20px;">
+<p class="intro">My interest in Computer Engineering began when I built my first computer. I was fascinated by how individual components worked together to create a functioning system, and that experience sparked my curiosity about both hardware and software. What began as a single project quickly developed into a broader passion for technology. I started experimenting with Raspberry Pi computers, programming in Unreal Engine, and exploring different programming languages to better understand how computers operate.</p><p class="intro">Since then, I've gained hands-on experience working in IT help desk support, where I've developed practical troubleshooting, networking, and problem-solving skills. At age 14, I earned my CompTIA Network+ certification, reflecting my early commitment to learning about computer networks and information technology. Over the years, I've also gained programming experience in C++, C, Python, Java, JavaScript, and HTML.</p><p class="intro">Today, I'm pursuing Computer Engineering at the Georgia Institute of Technology, where I hope to deepen my understanding of computer systems, artificial intelligence, and cybersecurity. I particularly enjoy projects that challenge me to combine different technical disciplines and apply classroom knowledge to real-world problems. Building, testing, and troubleshooting help me learn how the individual parts of a system work together. This portfolio documents that process as I develop my engineering abilities and explore career opportunities.</p></div>
+<aside class="mini"><strong>Currently exploring</strong><p>Hardware and software integration · Cybersecurity · AI · Embedded systems · Digital design</p></aside>
+</div>
+</section>
+<section aria-labelledby="goals-title" class="content longform" id="goals"><div class="wrap"><div class="section-heading"><div class="eyebrow">02 / Direction</div><h2 id="goals-title">Career Goals &amp; ECE Roadmap</h2></div><p>My primary career goal is to become a cybersecurity engineer, specializing in penetration testing and the growing role of artificial intelligence in cybersecurity. I'm particularly interested in understanding how vulnerabilities emerge within complex computer systems, how security professionals identify and address them, and how AI can strengthen defenses while also introducing new security challenges.</p><p>In addition to pursuing a technical career, I aspire to become an entrepreneur. I hope to combine engineering knowledge with business experience to develop useful technology or eventually establish a company in the technology and cybersecurity industries. This ambition means I need to develop communication and leadership skills alongside technical expertise.</p><p>To achieve these goals, I plan to take advantage of Georgia Tech's Computing Hardware and Emerging Architectures (CHEA) and Cybersecurity threads. I also intend to incorporate Computer Science and business electives to strengthen my programming abilities and entrepreneurial knowledge. Outside the classroom, I plan to pursue internships or technical employment every summer and participate in Vertically Integrated Projects (VIPs) and undergraduate research during the school year.</p><p>I expect this roadmap to evolve as I gain experience. Coursework is important for building a foundation, but internships, collaborative projects, and research will challenge me to put what I learn into practice. By graduation, I hope to have a portfolio that demonstrates not only what I have studied, but also how I have applied those skills to unfamiliar problems and contributed to real teams.</p><div class="career-grid"><div class="card"><h3>Learn</h3><p>CHEA and Cybersecurity threads, Computer Science electives, and business courses.</p></div><div class="card"><h3>Practice</h3><p>Summer internships or work, VIP teams, independent projects, and undergraduate research.</p></div><div class="card"><h3>Grow</h3><p>Cybersecurity engineering, penetration testing, AI security, and entrepreneurship.</p></div></div></div></section><section aria-labelledby="projects-title" class="content" id="projects">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">03 / Selected work</div><h2 id="projects-title">Projects</h2></div>
+<p class="intro">This collection highlights what I am learning through personal technical exploration and Georgia Tech coursework. My ECE Discovery Project has its own page, which I will update with its final demonstration and results before the Discovery Project Showcase.</p>
+<div class="grid">
+<article class="card"><div class="kicker">Course project · ECE</div><h3>Engineering Discovery Project</h3><p>Exploring a connection between Python, AI services, and Arduino-based hardware. I am documenting circuit construction, programming, testing, and the final demonstration on the dedicated project page.</p><div class="chips"><span class="chip">Arduino</span><span class="chip">Python</span><span class="chip">Prototyping</span></div>
+<a class="btn secondary" href="discovery-project.html" style="margin-top: 20px;">
   View Full Project →
 </a>
 </article>
-          <article class="card"><div class="kicker">Coursework · Digital design</div><h3>Digital Logic &amp; Circuits</h3><p>A place to document designs and lessons from digital systems coursework, including logic simplification, circuit diagrams, and testing.</p><div class="chips"><span class="chip">Logic gates</span><span class="chip">Circuit design</span></div></article>
-          <article class="card"><div class="kicker">Coursework · Programming</div><h3>Java &amp; Object-Oriented Programming</h3><p>Examples and reflections on writing organized, reusable programs with classes, inheritance, interfaces, and data structures.</p><div class="chips"><span class="chip">Java</span><span class="chip">OOP</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content" id="skills" aria-labelledby="skills-title">
-      <div class="wrap">
-        <div class="section-heading"><div class="eyebrow">03 / Toolkit</div><h2 id="skills-title">Skills &amp; interests</h2></div>
-        <div class="grid">
-          <div class="card"><h3>Programming</h3><p>Java, Python, foundational object-oriented programming, debugging, and problem-solving.</p></div>
-          <div class="card"><h3>Hardware &amp; engineering</h3><p>Arduino prototyping, basic circuits, digital logic, and connecting software to physical devices.</p></div>
-          <div class="card"><h3>Technical interests</h3><p>AI, cybersecurity, embedded systems, and the intersection of computing and engineering.</p></div>
-          <div class="card"><h3>How I work</h3><p>Iterative design, testing assumptions, documenting setbacks, and learning from feedback.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content" id="reflections" aria-labelledby="reflections-title">
-      <div class="wrap">
-        <div class="section-heading"><div class="eyebrow">04 / Learning in progress</div><h2 id="reflections-title">Reflections</h2></div>
-        <div class="grid">
-          <article class="card"><div class="kicker">Engineering process</div><h3>Learning through iteration</h3><p>When a prototype doesn't work the first time, debugging forces me to examine my assumptions, isolate problems, and test one change at a time. I want to keep developing that methodical approach.</p></article>
-          <article class="card"><div class="kicker">Academic growth</div><h3>Connecting theory to practice</h3><p>My goal is to use what I learn in class to build real things. Seeing a concept work in software or hardware helps turn an abstract idea into practical understanding.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content" id="resume" aria-labelledby="resume-title">
-      <div class="wrap split">
-        <div><div class="section-heading"><div class="eyebrow">05 / Experience</div><h2 id="resume-title">Résumé</h2></div><p class="intro">My résumé brings together education, technical skills, projects, and experience.</p>
-        <a href="resume.pdf" target="_blank" class="btn secondary">
-          View My Resume →
-        </a>
-      </div>
-    </section>
-
-    <section class="content" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="section-heading"><div class="eyebrow">06 / Connect</div><h2 id="contact-title">Let's connect.</h2></div>
-        <p class="intro">Interested in a project, collaboration, or conversation about engineering? You can connect with me here.</p>
-        <p class="note">LinkenIn: linkedin.com/in/max-bakelar-92a217407 | Email: maxbakelar@gmail.com</p>
-      </div>
-    </section>
-  </main>
-  <footer><div class="wrap"><span>© <span id="year">2026</span> Max Bakelar</span><span>Designed and built with HTML &amp; CSS · Hosted on GitHub Pages</span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<article class="card"><div class="kicker">Coursework · Digital design</div><h3>Digital Logic &amp; Circuits</h3><p>In digital design coursework, I have explored Boolean logic, gates, logic simplification, and the process of translating a desired function into a circuit. Learning these foundations helps me connect abstract computational rules to real hardware.</p><div class="chips"><span class="chip">Logic gates</span><span class="chip">Circuit design</span></div></article>
+<article class="card"><div class="kicker">Coursework · Programming</div><h3>Java &amp; Object-Oriented Programming</h3><p>Java coursework has given me practice with classes, inheritance, interfaces, polymorphism, and organizing code into reusable components. These concepts help me write programs that can grow beyond a single short assignment.</p><div class="chips"><span class="chip">Java</span><span class="chip">OOP</span></div></article>
+<article class="card"><div class="kicker">Personal project · Hardware</div><h3>Building My First Computer</h3><p>Building my own computer first sparked my interest in how hardware components work together. Selecting and assembling parts gave me practical experience thinking about the relationships between a processor, memory, storage, power delivery, and other components. It also encouraged me to move beyond using technology toward understanding and creating it. That experience eventually led me to explore Raspberry Pi computers, coding, and a wider range of engineering topics.</p><div class="chips"><span class="chip">PC hardware</span><span class="chip">Systems</span><span class="chip">Troubleshooting</span></div></article></div>
+</div>
+</section>
+<section aria-labelledby="skills-title" class="content" id="skills">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">04 / Toolkit</div><h2 id="skills-title">Skills &amp; interests</h2></div>
+<div class="grid">
+<div class="card"><h3>Programming</h3><p>C++, C, Python, Java, JavaScript, and HTML, including experience with object-oriented programming and debugging.</p></div>
+<div class="card"><h3>Hardware &amp; engineering</h3><p>PC assembly, Raspberry Pi experimentation, Arduino prototyping, introductory circuits, and digital logic.</p></div>
+<div class="card"><h3>Technical interests</h3><p>Penetration testing, network security, AI in cybersecurity, embedded systems, and computer architecture.</p></div>
+<div class="card"><h3>How I work</h3><p>IT help desk troubleshooting, communicating technical issues, testing assumptions, isolating faults, and learning from feedback.</p></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="reflections-title" class="content" id="reflections">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">05 / Learning in progress</div><h2 id="reflections-title">Reflections</h2></div>
+<div class="grid">
+<article class="card"><div class="kicker">Engineering process</div><h3>Experience beyond grades</h3><p>One of the most important lessons I have learned is that grades are not the only measure of success in school. Grades can show how well I understand a subject in an academic setting, but real experience often teaches lessons that a test cannot. Working on technical problems, making mistakes, and communicating with other people are all essential parts of preparing for a career. This realization motivates me to look for internships, research opportunities, and projects while continuing to take my courses seriously.</p></article>
+<article class="card"><div class="kicker">Academic growth</div><h3>Connecting knowledge to practice</h3><p>Through both coursework and hands-on work, I have learned that understanding an idea is different from applying it. When a prototype or program fails, I need to isolate the issue, challenge my assumptions, and test one change at a time. The same method is valuable when troubleshooting technology in a help desk role. I want to continue strengthening that deliberate problem-solving process through computer engineering projects and professional experience.</p></article>
+<article class="card"><div class="kicker">My next steps</div><h3>Learning with purpose</h3><p>As I continue at Georgia Tech, I want to use my time intentionally. I plan to learn from faculty and peers, contribute to projects outside ordinary assignments, and keep a record of what worked and what I would do differently. This portfolio will help me reflect on progress over time and make more informed decisions about the skills and experiences to pursue.</p></article></div>
+</div>
+</section>
+<section aria-labelledby="resume-title" class="content" id="resume">
+<div class="wrap split">
+<div><div class="section-heading"><div class="eyebrow">06 / Experience</div><h2 id="resume-title">Résumé</h2></div><p class="intro">My résumé summarizes my education, experience, projects, certifications, and technical skills. Open the PDF to view or download it.</p>
+<a class="btn secondary" href="resume.pdf" rel="noopener noreferrer" target="_blank">View / Download Résumé →</a>
+</div>
+</div></section>
+<section aria-labelledby="contact-title" class="content" id="contact">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">07 / Connect</div><h2 id="contact-title">Let's connect.</h2></div>
+<p class="intro">Interested in a project, collaboration, or conversation about engineering? You can connect with me here.</p>
+<p class="note"><a href="https://www.linkedin.com/in/max-bakelar-92a217407/" rel="noopener noreferrer" target="_blank">LinkedIn</a> · <a href="mailto:maxbakelar@gmail.com">maxbakelar@gmail.com</a> · <a href="https://github.com/maxbakelar" rel="noopener noreferrer" target="_blank">GitHub</a></p>
+</div>
+</section><section aria-labelledby="visuals-title" class="content" id="visuals"><div class="wrap"><div class="section-heading"><div class="eyebrow">08 / Visual learning</div><h2 id="visuals-title">Engineering visuals</h2></div><p class="intro">These diagrams illustrate concepts and goals described in my portfolio; they are conceptual illustrations rather than photographs of completed work. I also plan to share photographs from my own projects.</p><div class="visual-grid"><figure class="visual"><svg aria-label="PC components" role="img" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg"><rect fill="#0b1426" height="210" rx="12" width="540"></rect><rect fill="#173d5e" height="75" rx="12" stroke="#69c5ff" stroke-width="3" width="188" x="176" y="68"></rect><text fill="white" font-size="21" text-anchor="middle" x="270" y="112">Motherboard</text><g stroke="#77e2c8" stroke-width="3"><path d="M176 86H108M364 86H432M176 128H108M364 128H432"></path></g><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="108" x="30" y="66"></rect><text fill="#edf3ff" font-size="16" x="42" y="93">CPU</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="108" x="432" y="66"></rect><text fill="#edf3ff" font-size="16" x="444" y="93">RAM</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="108" x="30" y="108"></rect><text fill="#edf3ff" font-size="16" x="42" y="135">SSD</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="108" x="432" y="108"></rect><text fill="#edf3ff" font-size="16" x="444" y="135">Power</text></svg><figcaption>Conceptual diagram of the main components in a computer, related to the build that inspired my interest in engineering.</figcaption></figure><figure class="visual"><svg aria-label="Networking" role="img" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg"><rect fill="#0b1426" height="210" rx="12" width="540"></rect><path d="M130 103H208M330 103H408" stroke="#77e2c8" stroke-width="5"></path><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="110" x="20" y="84"></rect><text fill="#edf3ff" font-size="16" x="32" y="111">Computer</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="110" x="208" y="84"></rect><text fill="#edf3ff" font-size="16" x="220" y="111">Router</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="110" x="408" y="84"></rect><text fill="#edf3ff" font-size="16" x="420" y="111">Server</text></svg><figcaption>Simplified client–router–server model, relevant to my help desk experience and network security interests.</figcaption></figure><figure class="visual"><svg aria-label="Digital logic" role="img" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg"><rect fill="#0b1426" height="210" rx="12" width="540"></rect><g fill="none" stroke="#69c5ff" stroke-width="4"><path d="M73 74H208M73 132H208"></path><path d="M208 45H278A60 60 0 0 1 278 162H208Z"></path><path d="M338 103H461"></path></g><text fill="white" font-size="18" text-anchor="middle" x="258" y="110">AND</text><text fill="#edf3ff" font-size="16" x="32" y="83">A</text><text fill="#edf3ff" font-size="16" x="32" y="141">B</text><text fill="#edf3ff" font-size="16" x="473" y="111">Q</text></svg><figcaption>AND gate diagram showing a basic Boolean logic concept from digital design coursework.</figcaption></figure><figure class="visual"><svg aria-label="Arduino link" role="img" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg"><rect fill="#0b1426" height="210" rx="12" width="540"></rect><path d="M128 102H150M265 102H287M399 102H421" stroke="#77e2c8" stroke-width="4"></path><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="105" x="12" y="82"></rect><text fill="#edf3ff" font-size="16" x="24" y="109">Python</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="105" x="150" y="82"></rect><text fill="#edf3ff" font-size="16" x="162" y="109">Serial</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="105" x="287" y="82"></rect><text fill="#edf3ff" font-size="16" x="299" y="109">Arduino</text><rect fill="#20344d" height="43" rx="9" stroke="#2a3952" width="105" x="421" y="82"></rect><text fill="#edf3ff" font-size="16" x="433" y="109">LED</text></svg><figcaption>Conceptual communication flow from Python through serial communication to Arduino hardware and an LED.</figcaption></figure><figure class="visual"><svg aria-label="Career roadmap" role="img" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg"><rect fill="#0b1426" height="210" rx="12" width="540"></rect><path d="M74 103H460" stroke="#77e2c8" stroke-width="5"></path><circle cx="74" cy="103" fill="#69c5ff" r="10"></circle><circle cx="200" cy="103" fill="#69c5ff" r="10"></circle><circle cx="332" cy="103" fill="#69c5ff" r="10"></circle><circle cx="460" cy="103" fill="#69c5ff" r="10"></circle><text fill="#edf3ff" font-size="16" x="28" y="76">Courses</text><text fill="#edf3ff" font-size="16" x="162" y="76">VIP</text><text fill="#edf3ff" font-size="16" x="291" y="76">Internship</text><text fill="#edf3ff" font-size="16" x="422" y="76">Career</text></svg><figcaption>My intended progression through coursework, VIP research, internships, and a career in cybersecurity.</figcaption></figure></div><div class="visual-grid" id="project-photos" style="margin-top:18px"><figure class="visual"><img alt="My personal computer build" loading="lazy" onerror="this.closest('figure').style.display='none'" src="computer-build.jpg" style="width:100%;height:auto;border-radius:9px"/><figcaption>My computer build (personal photograph).</figcaption></figure><figure class="visual"><img alt="My ECE Discovery Project" loading="lazy" onerror="this.closest('figure').style.display='none'" src="discovery-project.jpg" style="width:100%;height:auto;border-radius:9px"/><figcaption>ECE Discovery Project hardware (personal photograph).</figcaption></figure></div></div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Max Bakelar</span><span>Designed and built with HTML &amp; CSS · Hosted on GitHub Pages</span></div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
